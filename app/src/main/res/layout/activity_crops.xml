@@ -10,8 +10,6 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="53dp"
-
-
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,42 +17,32 @@
             android:layout_height="match_parent"
             tools:context=".view_Model.CropsActivity">
 
-            <TextView
-                android:id="@+id/About"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="About"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toStartOf="@+id/Attacks"
-                app:layout_constraintHorizontal_bias="0.166"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/Attacks"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Attcaks"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toStartOf="@+id/Tips"
-                app:layout_constraintStart_toEndOf="@id/About"
-                tools:layout_editor_absoluteY="20dp" />
-
-            <TextView
-                android:id="@+id/Tips"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="72dp"
-                android:text="Tips"
-                android:textSize="16sp"
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/ToolBar"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/teal_200"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/Attacks"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.075"
+                app:menu="@menu/tool_bar_menu" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation_graph"
+        />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/about">
+
+    <fragment
+        android:id="@+id/about"
+        android:name="com.example.mkulima_plus.view_Model.About"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" >
+        <action
+            android:id="@+id/action_about_to_attacks"
+            app:destination="@id/attacks" />
+        <action
+            android:id="@+id/action_about_to_tips"
+            app:destination="@id/tips" />
+    </fragment>
+    <fragment
+        android:id="@+id/attacks"
+        android:name="com.example.mkulima_plus.view_Model.Attacks"
+        android:label="fragment_attacks"
+        tools:layout="@layout/fragment_attacks" >
+        <action
+            android:id="@+id/action_attacks_to_about"
+            app:destination="@id/about" />
+    </fragment>
+    <fragment
+        android:id="@+id/tips"
+        android:name="com.example.mkulima_plus.view_Model.Tips"
+        android:label="fragment_tips"
+        tools:layout="@layout/fragment_tips" >
+        <action
+            android:id="@+id/action_tips_to_about"
+            app:destination="@id/about" />
+    </fragment>
+</navigation>
