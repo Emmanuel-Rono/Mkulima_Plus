@@ -12,31 +12,26 @@ import androidx.fragment.app.*
 import com.example.mkulima_plus.R
 
 class CropsActivity : AppCompatActivity() {
+
+    val FragmentContainer = findViewById<FragmentContainerView>(R.id.fragmentContainerView)
+    val ToolBar = findViewById<Toolbar>(R.id.ToolBar)
+    val About_Fragment = About()
+    val Atack_fragment = Attacks()
+    val Tips_Fragment = Tips()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crops)
         //get the views
-        val FragmentContainer = findViewById<FragmentContainerView>(R.id.fragmentContainerView)
-        val ToolBar = findViewById<Toolbar>(R.id.ToolBar)
-        val About_Fragment = About()
-        val Atack_fragment = Attacks()
-        val Tips_Fragment = Tips()
 
-
+    }
         override fun onOptionsItemSelected(item: MenuItem): Boolean {
-            when (item.itemId)
-                R.id.Attacks ->
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.fragmentContainerView, About_Fragment)
-                commit()
-            }
+            if(item.itemId == R.id.Attacks)
+                supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.fragmentContainerView, About_Fragment)
+                    commit()
+                }
             return super.onOptionsItemSelected(item)
         }
     }
 
 
-
-
-        }
-
-}
