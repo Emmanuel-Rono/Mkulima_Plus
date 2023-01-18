@@ -9,7 +9,7 @@
         android:title="@string/about"
 />
     <item
-        android:id="@+id/Attacks"
+        android:id="@+id/fragment_attacks"
         app:showAsAction="ifRoom"
         android:title="@string/attacks"
         />

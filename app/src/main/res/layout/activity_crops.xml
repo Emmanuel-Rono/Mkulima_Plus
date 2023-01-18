@@ -17,19 +17,6 @@
             android:layout_height="match_parent"
             tools:context=".view_Model.CropsActivity">
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/ToolBar"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="1dp"
-                android:background="@color/teal_200"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.075"
-                app:menu="@menu/tool_bar_menu" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
