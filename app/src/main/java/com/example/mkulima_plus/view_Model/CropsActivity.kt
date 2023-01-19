@@ -14,7 +14,7 @@ import com.example.mkulima_plus.R
 class CropsActivity : AppCompatActivity() {
     val Atack_fragment = Attacks()
     //val About_fragment=About()
-    override fun onCreate(savedInstanceState: Bundle?) {
+            override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crops)
        //if (savedInstanceState == null) {
@@ -26,6 +26,7 @@ class CropsActivity : AppCompatActivity() {
         //Access the Recyclerview
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
         menuInflater.inflate(R.menu.tool_bar_menu,menu)
         return true
     }
