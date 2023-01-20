@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val test: Button =findViewById(R.id.button)
-
             test.setOnClickListener {
                 val intent=Intent(this,CropsActivity::class.java)
                 startActivity(intent)

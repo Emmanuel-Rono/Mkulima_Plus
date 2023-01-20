@@ -6,7 +6,7 @@
     >
 
     <item
-        android:id="@+id/About"
+        android:id="@+id/fragment_about"
         app:showAsAction="always"
         android:title="@string/about"
 />
@@ -16,7 +16,7 @@
         android:title="@string/attacks"
         />
     <item
-        android:id="@+id/Tips"
+        android:id="@+id/tips"
         app:showAsAction="always"
         android:title="@string/tips"
         />
