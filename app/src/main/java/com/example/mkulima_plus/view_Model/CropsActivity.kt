@@ -17,9 +17,11 @@ class CropsActivity : AppCompatActivity() {
             override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crops)
+        title="Kotlin"
        //if (savedInstanceState == null) {
            // supportFragmentManager.commit {
               //  setReorderingAllowed(true)
+
               //  add<About>(R.id.fragmentContainerView)
            // }
         //}
@@ -34,8 +36,8 @@ class CropsActivity : AppCompatActivity() {
     {
         when(item.itemId){R.id.fragment_attacks->
             supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView,Atack_fragment)
+                .commit()
         }
-        Toast.makeText(this,"Attack clicked",Toast.LENGTH_LONG).show()
         return super.onOptionsItemSelected(item)
     }
     }
