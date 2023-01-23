@@ -9,4 +9,7 @@
     <string name="test">Test</string>
     <string name="attack_fragment">Attack_Fragment</string>
     <string name="tips_fragment">Tips_Fragment</string>
+    <string name="mkulima_plus">Mkulima Plus</string>
+    <string name="select_crops">Select Crops :</string>
+
 </resources>
