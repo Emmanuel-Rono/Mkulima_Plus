@@ -13,6 +13,7 @@ class About : Fragment(R.layout.fragment_about) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         Toast.makeText(context, "About_Frag , success", Toast.LENGTH_LONG).show()
 
     }
