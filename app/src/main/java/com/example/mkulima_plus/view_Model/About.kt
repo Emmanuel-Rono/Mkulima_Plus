@@ -19,12 +19,9 @@ lateinit var recyclerview:RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Toast.makeText(context, "About_Frag , success", Toast.LENGTH_LONG).show()
-    }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        recyclerview.findViewById<RecyclerView>(R.id.RecyclerviewAbout)
-        recyclerview.layoutManager=LinearLayoutManager(context)
-        recyclerview.hasFixedSize()
+        recyclerview= view?.findViewById(R.id.RecyclerviewAbout)!!
+            recyclerview.layoutManager =LinearLayoutManager(context )
+            recyclerview.hasFixedSize()
         aboutData= arrayListOf<DataModel>()
         getAboutData()
     }
