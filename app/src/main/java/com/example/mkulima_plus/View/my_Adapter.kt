@@ -5,12 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mkulima_plus.Model.DataModel
 import com.example.mkulima_plus.R
 
-class my_Adapter(val about_list:Array<DataModel>):RecyclerView.Adapter<my_Adapter.my_ViewHolder>()
+class my_Adapter(val about_list: ArrayList<DataModel>):RecyclerView.Adapter<my_Adapter.my_ViewHolder>()
 
 {
 
@@ -24,15 +23,14 @@ class my_Adapter(val about_list:Array<DataModel>):RecyclerView.Adapter<my_Adapte
         override fun onBindViewHolder(holder: my_ViewHolder, position: Int) {
             val currentData = about_list[position]
             holder.about_the_crop.text=currentData.about_data
-
         }
-
         override fun getItemCount(): Int {
             return about_list.size
         }
     class my_ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
         val about_the_crop:TextView=itemView.findViewById(R.id.aboutCrop)
         val image_Crop = itemView.findViewById<ImageView>(R.id.cropImage)
+        
 
 
     }
