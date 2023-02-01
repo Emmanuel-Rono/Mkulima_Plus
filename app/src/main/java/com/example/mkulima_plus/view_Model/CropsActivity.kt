@@ -20,7 +20,7 @@ import com.example.mkulima_plus.R
 class CropsActivity : AppCompatActivity() {
     val Atack_fragment = Attacks()
     lateinit var navcontroller: NavController
-            override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crops)
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.my_toolbar)
