@@ -5,28 +5,43 @@
     android:layout_width="match_parent"
     android:background="@color/white"
     android:layout_height="match_parent">
-    <ImageView
-        android:id="@+id/cropImage"
-        android:src="@mipmap/isaka"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@id/imageLinear"
+        android:layout_width="318dp"
+        android:layout_height="224dp"
+        app:layout_constraintBottom_toTopOf="@id/aboutCrop"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.172"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars"
-        />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/cropImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/isaka"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <TextView
         android:id="@+id/aboutCrop"
-        android:layout_width="410dp"
-        android:layout_height="607dp"
+        android:layout_width="389dp"
+        android:layout_height="489dp"
+        android:background="@color/teaal"
         android:fontFamily="cursive"
         android:text="@string/isaka"
+        android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cropImage"
+        app:layout_constraintTop_toBottomOf="@+id/imageLinear"
         app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

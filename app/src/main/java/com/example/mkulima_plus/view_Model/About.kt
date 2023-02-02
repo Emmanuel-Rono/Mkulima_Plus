@@ -1,62 +1,65 @@
 package com.example.mkulima_plus.view_Model
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mkulima_plus.Model.DataModel
-import com.example.mkulima_plus.R
 import com.example.mkulima_plus.View.my_Adapter
 import com.example.mkulima_plus.databinding.FragmentAboutBinding
-import com.google.firebase.database.*
+import com.google.firebase.firestore.DocumentChange
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class About : Fragment() {
-private lateinit var  dbRef:DatabaseReference
-private lateinit var aboutData:ArrayList<DataModel>
-private lateinit var reccyclerview:RecyclerView
-private lateinit var _binding:FragmentAboutBinding
-private lateinit var adapter: my_Adapter
-private val binding get()= _binding
+    private lateinit var dbRef: FirebaseFirestore
+    private lateinit var aboutData: ArrayList<DataModel>
+    private lateinit var reccyclerview: RecyclerView
+    private lateinit var _binding: FragmentAboutBinding
+    private lateinit var adapter: my_Adapter
+    private val binding get() = _binding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding=FragmentAboutBinding.inflate(inflater, container, false)
+        _binding = FragmentAboutBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         super.onCreate(savedInstanceState)
-       reccyclerview=binding.RecyclerviewAbout
-            reccyclerview.layoutManager =LinearLayoutManager(context )
-            reccyclerview.hasFixedSize()
-        aboutData= arrayListOf<DataModel>()
-        adapter=my_Adapter(aboutData)
+        reccyclerview = binding.RecyclerviewAbout
+        reccyclerview.layoutManager = LinearLayoutManager(this.context)
+        reccyclerview.hasFixedSize()
+        aboutData = arrayListOf()
+        adapter = my_Adapter(aboutData) //object of the adapter and pass the datalist
+        reccyclerview.adapter = adapter
         getAboutData()
     }
-    private fun getAboutData(){
-        dbRef=FirebaseDatabase.getInstance().getReference("Saka")
-        dbRef.addValueEventListener(object:ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()) {
-                    for (aboutdata in snapshot.children) {
-                        val data = aboutdata.getValue(DataModel::class.java)
-                        aboutData.add(data!!)
-                    }
-                }
-                reccyclerview.adapter=adapter
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun getAboutData() {
+        dbRef = FirebaseFirestore.getInstance()
+        dbRef.collection("Saka").addSnapshotListener { value, error ->
+            if (error != null) {
+                Log.e("Firestone error ", error.message.toString())
 
             }
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+            for (dc: DocumentChange in value?.documentChanges!!)
+            {
+                if (dc.type == DocumentChange.Type.ADDED) {
+                    aboutData.add(dc.document.toObject(DataModel::class.java))
+                }
             }
-        })
+            adapter.notifyDataSetChanged()
+        }
     }
+
 }
