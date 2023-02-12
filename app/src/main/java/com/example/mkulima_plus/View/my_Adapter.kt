@@ -13,8 +13,7 @@ class my_Adapter(val about_list: ArrayList<DataModel>):RecyclerView.Adapter<my_A
 
 {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): my_ViewHolder {
-            val layout =
-                LayoutInflater.from(parent.context).inflate(R.layout.about_crops, parent, false)
+            val layout =LayoutInflater.from(parent.context).inflate(R.layout.about_crops, parent, false)
             return my_ViewHolder(layout)
         }
         override fun onBindViewHolder(holder: my_ViewHolder, position: Int) {
