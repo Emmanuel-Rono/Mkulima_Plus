@@ -15,7 +15,6 @@ import com.example.mkulima_plus.View.cropsModel
 
 class MainActivity : AppCompatActivity() {
     lateinit var Recyclerview: RecyclerView
-
     lateinit var images: ArrayList<Int>
     lateinit var textname: Array<String>
     lateinit var dataArray:ArrayList<cropsModel>
@@ -32,19 +31,49 @@ class MainActivity : AppCompatActivity() {
         }
 
         images = arrayListOf(
-            R.drawable.Kunde,
+            R.drawable.kunde,
             R.drawable.managu,
             R.drawable.isaka2,
+            R.drawable.kunde,
+            R.drawable.managu,
+            R.drawable.isaka2,
+            R.drawable.kunde,
+            R.drawable.managu,
+            R.drawable.isaka2,
+            R.drawable.kunde,
+            R.drawable.managu,
+            R.drawable.isaka2,
+            R.drawable.kunde,
+            R.drawable.managu,R.drawable.isaka2,
+            R.drawable.kunde,
+            R.drawable.managu,
+            R.drawable.isaka2,
+
             R.drawable.mrenda
         )
         textname = arrayOf(
             "Kunde",
             "Managu",
             "Isaka",
+            "Kunde",
+            "Managu",
+            "Isaka",
+            "Kunde",
+            "Managu",
+            "Isaka",
+            "Kunde",
+            "Managu",
+            "Isaka",
+            "Kunde",
+            "Managu",
+            "Isaka",
+            "Kunde",
+            "Managu",
+            "Isaka",
             "Mrenda"
         )
         Recyclerview = findViewById(R.id.Recyclerview)
-        Recyclerview.layoutManager = GridLayoutManager(this, 2)
+        Recyclerview.layoutManager = GridLayoutManager(this, 3)
         Recyclerview.hasFixedSize()
         dataArray = arrayListOf<cropsModel>()
         getCropData()
