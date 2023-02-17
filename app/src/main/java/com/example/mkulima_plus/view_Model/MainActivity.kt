@@ -77,7 +77,8 @@ class MainActivity : AppCompatActivity() {
         Recyclerview.hasFixedSize()
         dataArray = arrayListOf<cropsModel>()
         getCropData()
-
+        //val adapter=cropsAdapater(dataArray)
+        //Recyclerview.adapter =adapter
     }
     fun getCropData() {
         for (x in images.indices) {
