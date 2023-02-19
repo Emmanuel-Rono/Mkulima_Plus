@@ -40,7 +40,7 @@ class About : Fragment() {
         reccyclerview.hasFixedSize()
         aboutData = arrayListOf()
         adapter = my_Adapter(aboutData) //object of the adapter and pass the datalist
-        getAboutData()
+        //getAboutData()
     }
     @SuppressLint("NotifyDataSetChanged")
     private fun getAboutData() {
