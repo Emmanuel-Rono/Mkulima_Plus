@@ -10,9 +10,12 @@ import com.example.mkulima_plus.R
 
 class cropsAdapater(val cropsData: ArrayList<cropsModel>) :
     RecyclerView.Adapter<cropsAdapater.crop_Viewholder>() {
+    var onItemClick:((cropsModel)->Unit)?=null
+
     class crop_Viewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var cropimage: ImageView = itemView.findViewById(R.id.crop_image)
         val name_of_crop: TextView = itemView.findViewById(R.id.crop_name)
+
 
     }
 
@@ -25,8 +28,10 @@ class cropsAdapater(val cropsData: ArrayList<cropsModel>) :
         val CropsData = cropsData[position]
         holder.cropimage.setImageResource(CropsData.images)
         holder.name_of_crop.text = CropsData.textname
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(CropsData)
+        }
     }
-
     override fun getItemCount(): Int {
         return cropsData.size
     }

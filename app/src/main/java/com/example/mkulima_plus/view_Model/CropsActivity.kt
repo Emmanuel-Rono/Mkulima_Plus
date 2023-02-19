@@ -8,6 +8,7 @@ import android.text.TextUtils
 import android.text.TextUtils.replace
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.Toast
 import android.widget.Toolbar
 import androidx.fragment.app.*
@@ -17,6 +18,8 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.mkulima_plus.R
+import com.example.mkulima_plus.View.cropsModel
+
 class CropsActivity : AppCompatActivity() {
     val Atack_fragment = Attacks()
     lateinit var navcontroller: NavController
@@ -30,6 +33,16 @@ class CropsActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navcontroller = navhost.findNavController()
         toolbar.setupWithNavController(navcontroller)
+
+        //collecting the dataa
+
+        val cropsdata=intent.getParcelableExtra("Cropsdata",cropsModel)
+        if (cropsdata != null)
+        {
+            val imageOfCrop:ImageView=findViewById(R.id.cropImage)
+
+        }
+
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
@@ -59,6 +72,10 @@ class CropsActivity : AppCompatActivity() {
 
 
     }
+
+private fun Intent.getParcelableExtra(s: String, cropsModel: cropsModel.CREATOR) {
+
+}
 
 
 

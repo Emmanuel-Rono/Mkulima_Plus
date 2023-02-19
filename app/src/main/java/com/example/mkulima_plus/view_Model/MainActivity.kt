@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var Recyclerview: RecyclerView
     lateinit var images: ArrayList<Int>
     lateinit var textname: Array<String>
-    lateinit var dataArray:ArrayList<cropsModel>
+    lateinit var dataArray: ArrayList<cropsModel>
 
     @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             R.drawable.managu,
             R.drawable.isaka2,
             R.drawable.kunde,
-            R.drawable.managu,R.drawable.isaka2,
+            R.drawable.managu, R.drawable.isaka2,
             R.drawable.kunde,
             R.drawable.managu,
             R.drawable.isaka2,
@@ -76,18 +76,22 @@ class MainActivity : AppCompatActivity() {
         Recyclerview.layoutManager = GridLayoutManager(this, 3)
         Recyclerview.hasFixedSize()
         dataArray = arrayListOf<cropsModel>()
-        getCropData()
-        //val adapter=cropsAdapater(dataArray)
-        //Recyclerview.adapter =adapter
-    }
-    fun getCropData() {
+        val adapter = cropsAdapater(dataArray)
+        Recyclerview.adapter = adapter
         for (x in images.indices) {
-           val cropsModel_Obj=cropsModel(images[x],textname[x])
+            val cropsModel_Obj = cropsModel(images[x], textname[x])
             dataArray.add(cropsModel_Obj)
         }
-Recyclerview.adapter= cropsAdapater(dataArray)
+       adapter.onItemClick=
+        {
+            val intent=Intent(this,CropsActivity::class.java)
+            intent.putExtra("Cropsdata",it)
+            startActivity(intent)
+
+        }
+
+
     }
+
+
 }
-
-
-

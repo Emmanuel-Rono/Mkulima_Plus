@@ -40,17 +40,14 @@ class About : Fragment() {
         reccyclerview.hasFixedSize()
         aboutData = arrayListOf()
         adapter = my_Adapter(aboutData) //object of the adapter and pass the datalist
-        reccyclerview.adapter = adapter
         getAboutData()
     }
-
     @SuppressLint("NotifyDataSetChanged")
     private fun getAboutData() {
-        dbRef = FirebaseFirestore.getInstance()
+        dbRef = FirebaseFirestore.getInstance() //get the database instance
         dbRef.collection("Saka").addSnapshotListener { value, error ->
             if (error != null) {
                 Log.e("Firestone error ", error.message.toString())
-
             }
             for (dc: DocumentChange in value?.documentChanges!!)
             {
@@ -60,6 +57,6 @@ class About : Fragment() {
             }
             adapter.notifyDataSetChanged()
         }
+        reccyclerview.adapter = adapter
     }
-
 }
