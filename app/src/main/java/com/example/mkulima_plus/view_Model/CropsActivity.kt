@@ -26,6 +26,7 @@ import com.example.mkulima_plus.View.cropsModel
 class CropsActivity : AppCompatActivity() {
     val Atack_fragment = Attacks()
     lateinit var navcontroller: NavController
+    var cropsdata = intent.getParcelableExtra<cropsModel>("Cropsdata", cropsModel::class.java)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crops)
@@ -36,6 +37,7 @@ class CropsActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navcontroller = navhost.findNavController()
         toolbar.setupWithNavController(navcontroller)
+
         //collecting the dataa
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -48,11 +50,9 @@ class CropsActivity : AppCompatActivity() {
                 Toast.makeText(this, "Attacks clicked", Toast.LENGTH_LONG).show()
                 navcontroller.navigate(R.id.action_about_to_attacks)
                 if (Build.VERSION.SDK_INT >= 33) {
-                    val cropsdata =
-                        intent.getParcelableExtra<cropsModel>("Cropsdata", cropsModel::class.java)
                     if (cropsdata != null) {
                         val intent2 = Intent(this, About::class.java)
-                        intent2.putExtra("the_crops_data", cropsdata)
+                            intent2.putExtra("the_crops_data", cropsdata)
                         startActivity(intent2)
                     }
                 }
@@ -69,8 +69,6 @@ class CropsActivity : AppCompatActivity() {
                 }
             }
                 return false
-
-
 
     }
         }

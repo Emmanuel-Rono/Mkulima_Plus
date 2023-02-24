@@ -33,44 +33,13 @@ class MainActivity : AppCompatActivity() {
         images = arrayListOf(
             R.drawable.kunde,
             R.drawable.managu,
-            R.drawable.isaka2,
-            R.drawable.kunde,
-            R.drawable.managu,
-            R.drawable.isaka2,
-            R.drawable.kunde,
-            R.drawable.managu,
-            R.drawable.isaka2,
-            R.drawable.kunde,
-            R.drawable.managu,
-            R.drawable.isaka2,
-            R.drawable.kunde,
-            R.drawable.managu, R.drawable.isaka2,
-            R.drawable.kunde,
-            R.drawable.managu,
-            R.drawable.isaka2,
+            R.drawable.isaka2
 
-            R.drawable.mrenda
         )
         textname = arrayOf(
             "Kunde",
             "Managu",
-            "Isaka",
-            "Kunde",
-            "Managu",
-            "Isaka",
-            "Kunde",
-            "Managu",
-            "Isaka",
-            "Kunde",
-            "Managu",
-            "Isaka",
-            "Kunde",
-            "Managu",
-            "Isaka",
-            "Kunde",
-            "Managu",
-            "Isaka",
-            "Mrenda"
+            "Isaka"
         )
         Recyclerview = findViewById(R.id.Recyclerview)
         Recyclerview.layoutManager = GridLayoutManager(this, 3)
@@ -87,11 +56,6 @@ class MainActivity : AppCompatActivity() {
             val intent=Intent(this,CropsActivity::class.java)
             intent.putExtra("Cropsdata",it)
             startActivity(intent)
-
         }
-
-
     }
-
-
 }
