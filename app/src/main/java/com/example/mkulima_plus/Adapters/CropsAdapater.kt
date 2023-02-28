@@ -1,4 +1,4 @@
-package com.example.mkulima_plus.View
+package com.example.mkulima_plus.Adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,15 +6,23 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mkulima_plus.Models.cropsModel
 import com.example.mkulima_plus.R
 
-class cropsAdapater(val cropsData: ArrayList<cropsModel>) :
+class cropsAdapater(val cropsData: ArrayList<cropsModel>, val CLickListener: clickListener) :
     RecyclerView.Adapter<cropsAdapater.crop_Viewholder>() {
-    var onItemClick:((cropsModel)->Unit)?=null
 
-    class crop_Viewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+   inner class crop_Viewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var cropimage: ImageView = itemView.findViewById(R.id.crop_image)
         val name_of_crop: TextView = itemView.findViewById(R.id.crop_name)
+        init {
+            itemView.setOnClickListener{
+                val position=adapterPosition
+                CLickListener.onClick(position)
+
+            }
+
+        }
 
 
     }
@@ -28,11 +36,13 @@ class cropsAdapater(val cropsData: ArrayList<cropsModel>) :
         val CropsData = cropsData[position]
         holder.cropimage.setImageResource(CropsData.images)
         holder.name_of_crop.text = CropsData.textname
-        holder.itemView.setOnClickListener {
-            onItemClick?.invoke(CropsData)
-        }
     }
     override fun getItemCount(): Int {
         return cropsData.size
     }
+    interface clickListener
+    {
+        fun onClick(position: Int)
+    }
+
 }

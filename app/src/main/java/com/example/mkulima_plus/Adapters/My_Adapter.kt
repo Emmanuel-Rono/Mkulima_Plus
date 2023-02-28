@@ -1,4 +1,4 @@
-package com.example.mkulima_plus.View
+package com.example.mkulima_plus.Adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mkulima_plus.Model.DataModel
 import com.example.mkulima_plus.R
 
 class my_Adapter(val about_list: ArrayList<DataModel>):RecyclerView.Adapter<my_Adapter.my_ViewHolder>()

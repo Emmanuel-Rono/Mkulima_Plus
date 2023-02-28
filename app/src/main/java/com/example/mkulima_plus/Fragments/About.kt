@@ -1,4 +1,4 @@
-package com.example.mkulima_plus.view_Model
+package com.example.mkulima_plus.Fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mkulima_plus.Model.DataModel
-import com.example.mkulima_plus.View.my_Adapter
+import com.example.mkulima_plus.Adapters.DataModel
+import com.example.mkulima_plus.Adapters.my_Adapter
 import com.example.mkulima_plus.databinding.FragmentAboutBinding
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore

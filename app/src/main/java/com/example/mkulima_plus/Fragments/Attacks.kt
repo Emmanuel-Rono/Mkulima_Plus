@@ -1,7 +1,6 @@
-package com.example.mkulima_plus.view_Model
+package com.example.mkulima_plus.Fragments
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.mkulima_plus.R
 
