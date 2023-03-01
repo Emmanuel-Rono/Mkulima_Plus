@@ -1,4 +1,4 @@
-package com.example.mkulima_plus.Models
+package com.example.mkulima_plus.View
 
 import android.os.Parcel
 import android.os.Parcelable

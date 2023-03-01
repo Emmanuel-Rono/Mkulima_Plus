@@ -1,4 +1,4 @@
-package com.example.mkulima_plus.Fragments
+package com.example.mkulima_plus.view_Model
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
