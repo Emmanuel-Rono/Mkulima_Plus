@@ -1,4 +1,4 @@
-package com.example.mkulima_plus.view_Model
+package com.example.mkulima_plus.Isaka
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -15,8 +15,7 @@ import com.example.mkulima_plus.databinding.FragmentAboutBinding
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 
-
-class About : Fragment() {
+class Isaka_About : Fragment() {
     private lateinit var dbRef: FirebaseFirestore
     private lateinit var aboutData: ArrayList<DataModel>
     private lateinit var reccyclerview: RecyclerView
