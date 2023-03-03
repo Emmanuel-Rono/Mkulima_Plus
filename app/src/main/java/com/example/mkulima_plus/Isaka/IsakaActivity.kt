@@ -41,6 +41,11 @@ class IsakaActivity : AppCompatActivity() {
                 navcontroller.navigate(R.id.action_about_to_tips)
             }
         }
+        when(item.itemId) {
+            R.id.fragment_about -> {
+                navcontroller.navigate(R.id.action_tips_to_about)
+            }
+        }
         return false
     }
 }

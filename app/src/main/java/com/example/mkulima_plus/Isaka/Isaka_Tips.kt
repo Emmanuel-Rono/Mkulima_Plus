@@ -1,5 +1,4 @@
 package com.example.mkulima_plus.Isaka
-
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
@@ -10,29 +9,29 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mkulima_plus.R
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
-
-class Isaka_About : Fragment(R.layout.fragment_about) {
+class Isaka_Tips : Fragment(R.layout.fragment_tips) {
     private lateinit var dbRef: FirebaseFirestore
-    var AttacksData = ArrayList<Isaka_DataClass>()
+    var AttacksData=ArrayList<Isaka_DataClass>()
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: Isaka_Adapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView = view.findViewById(R.id.RecyclerviewAbout)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView=view.findViewById(R.id.tips_Recyclerview)
+        recyclerView.layoutManager= LinearLayoutManager(requireContext())
         recyclerView.hasFixedSize()
-        adapter = Isaka_Adapter(requireContext(), AttacksData)
+        adapter = Isaka_Adapter(requireContext(),AttacksData)
         getAboutData()
     }
-
     @SuppressLint("NotifyDataSetChanged")
     private fun getAboutData() {
         dbRef = FirebaseFirestore.getInstance() //get the database instance
-        dbRef.collection("About_Isaka").addSnapshotListener { value, error ->
+        dbRef.collection("Isaka_Tips").
+        addSnapshotListener { value, error ->
             if (error != null) {
                 Log.e("Firestone error ", error.message.toString())
             }
-            for (dc: DocumentChange in value?.documentChanges!!) {
+            for (dc: DocumentChange in value?.documentChanges!!)
+            {
                 if (dc.type == DocumentChange.Type.ADDED) {
                     AttacksData.add(dc.document.toObject(Isaka_DataClass::class.java))
                 }
@@ -42,3 +41,4 @@ class Isaka_About : Fragment(R.layout.fragment_about) {
         recyclerView.adapter = adapter
     }
 }
+

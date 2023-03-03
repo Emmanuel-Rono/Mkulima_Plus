@@ -12,7 +12,7 @@ import androidx.navigation.NavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mkulima_plus.R
-import com.example.mkulima_plus.Isaka.Isaka_Attacks_Adapter
+import com.example.mkulima_plus.Isaka.Isaka_Adapter
 import com.example.mkulima_plus.Isaka.IsakaActivity
 import com.example.mkulima_plus.View.cropsAdapater
 import com.example.mkulima_plus.View.cropsModel
@@ -23,14 +23,11 @@ class MainActivity : AppCompatActivity(),cropsAdapater.OnlickListener{
     lateinit var images: ArrayList<Int>
     lateinit var textname: Array<String>
     lateinit var dataArray: ArrayList<cropsModel>
-    lateinit var dataArray2: ArrayList<Isaka_Attacks_Adapter>
-
-
+    lateinit var dataArray2: ArrayList<Isaka_Adapter>
     @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         //Setting up optionMenu Provider
         addMenuProvider(object : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
@@ -41,7 +38,6 @@ class MainActivity : AppCompatActivity(),cropsAdapater.OnlickListener{
                 return true
             }
         })
-
         images = arrayListOf(
             R.drawable.kunde,
             R.drawable.managu,
@@ -70,7 +66,6 @@ class MainActivity : AppCompatActivity(),cropsAdapater.OnlickListener{
            0->
            {
                    startActivity(Intent(this, IsakaActivity::class.java))
-
            }
            1->
            {
@@ -85,4 +80,3 @@ class MainActivity : AppCompatActivity(),cropsAdapater.OnlickListener{
        }
 
     }
-

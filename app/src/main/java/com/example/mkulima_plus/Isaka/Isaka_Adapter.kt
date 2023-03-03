@@ -10,10 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mkulima_plus.R
 
-class Isaka_Attacks_Adapter(val context: Context,val attacks:List<Isaka_Attacks_DataClass>,
+class Isaka_Adapter(val context: Context, val attacks:List<Isaka_DataClass>,
 
-)
-    :RecyclerView.Adapter<Isaka_Attacks_Adapter.attacks_Viewholder>()
+                    )
+    :RecyclerView.Adapter<Isaka_Adapter.attacks_Viewholder>()
 {
     inner class attacks_Viewholder(itemView: View):RecyclerView.ViewHolder(itemView)
     {
