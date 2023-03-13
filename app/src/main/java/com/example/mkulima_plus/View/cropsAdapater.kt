@@ -20,12 +20,9 @@ class cropsAdapater(val cropsData: ArrayList<cropsModel>, val listener: MainActi
             itemView.setOnClickListener {
                 val position=adapterPosition
                 listener.onclick(position)
-
             }
         }
-
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): crop_Viewholder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.cropsimages, parent, false)
         return crop_Viewholder(view)

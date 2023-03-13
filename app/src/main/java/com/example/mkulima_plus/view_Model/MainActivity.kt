@@ -14,8 +14,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mkulima_plus.R
 import com.example.mkulima_plus.Isaka.Isaka_Adapter
 import com.example.mkulima_plus.Isaka.IsakaActivity
+import com.example.mkulima_plus.Managu.Managu_Activity
 import com.example.mkulima_plus.View.cropsAdapater
 import com.example.mkulima_plus.View.cropsModel
+import com.example.mkulima_plus.kunde.kundeActivity
 
 class MainActivity : AppCompatActivity(),cropsAdapater.OnlickListener{
     lateinit var Recyclerview: RecyclerView
@@ -65,11 +67,11 @@ class MainActivity : AppCompatActivity(),cropsAdapater.OnlickListener{
        {
            0->
            {
-                   startActivity(Intent(this, IsakaActivity::class.java))
+                   startActivity(Intent(this, kundeActivity::class.java))
            }
            1->
            {
-               startActivity(Intent(this, IsakaActivity::class.java))
+               startActivity(Intent(this,Managu_Activity::class.java))
            }
            2->
            {

@@ -3,22 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white">
-    <TextView
-        android:id="@+id/seasonality_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:layout_margin="10dp"
-        android:text="Planting Tips: "
-        app:layout_constraintBottom_toTopOf="@+id/CropsLinear"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/CropsLinear"
         android:layout_width="match_parent"
@@ -28,32 +15,41 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.057">
+
         <TextView
             android:id="@+id/stage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:fontFamily="cursive"
             android:text="Stage1: Plant Selction"
             android:textColor="@color/black"
             android:textSize="17sp"
             android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/white" />
+
         <ImageView
-            android:id="@+id/imageView_attacks"
+            android:id="@+id/imageView_tips"
             android:layout_width="300dp"
             android:layout_height="150dp"
             android:layout_marginStart="10dp"
             android:scaleType="fitXY"
             android:src="@drawable/isaka2" />
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="3dp"
+            android:layout_height="2dp"
             android:background="@color/white" />
 
         <TextView
-            android:id="@+id/Isaka_attack_text"
+            android:id="@+id/Isaka_tips_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
