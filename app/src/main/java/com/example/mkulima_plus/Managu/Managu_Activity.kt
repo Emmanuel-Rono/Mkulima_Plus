@@ -9,7 +9,6 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.mkulima_plus.R
-
 class Managu_Activity : AppCompatActivity() {
     private lateinit var navcontroller: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +16,7 @@ class Managu_Activity : AppCompatActivity() {
         setContentView(R.layout.activity_managu)
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.managu_toolbar)
         setSupportActionBar(toolbar)
-        title = "Crops"
+        title = "Managu"
         val navhost = supportFragmentManager.findFragmentById(R.id.fragmentContainerViewmanagu) as NavHostFragment
         navcontroller = navhost.findNavController()
         toolbar.setupWithNavController(navcontroller)
@@ -34,8 +33,8 @@ class Managu_Activity : AppCompatActivity() {
             }
         }
         when (item.itemId) {
-            R.id.tips -> {
-                navcontroller.navigate(R.id.action_managu_attacks_to_managu_Tips)
+            R.id.managu_Tips-> {
+                navcontroller.navigate(R.id.action_managu_about_to_managu_Tips)
             }
         }
         when(item.itemId) {

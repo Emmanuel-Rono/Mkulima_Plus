@@ -18,9 +18,8 @@ class IsakaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_crops)
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.my_toolbar)
         setSupportActionBar(toolbar)
-        title = "Crops"
-        val navhost =
-            supportFragmentManager.findFragmentById(R.id.fragmentContainerView3) as NavHostFragment
+        title = "Isaka"
+        val navhost = supportFragmentManager.findFragmentById(R.id.fragmentContainerView3) as NavHostFragment
         navcontroller = navhost.findNavController()
         toolbar.setupWithNavController(navcontroller)
     }

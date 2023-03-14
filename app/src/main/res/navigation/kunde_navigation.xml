@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/kunde_navigation"
+    app:startDestination="@id/kunde_Attacks2">
+    <fragment
+        android:id="@+id/kunde_Attacks2"
+        android:name="com.example.mkulima_plus.kunde.kunde_Attacks"
+        android:label="fragment_kunde__attacks"
+        tools:layout="@layout/fragment_kunde__attacks" >
+        <action
+            android:id="@+id/action_kunde_Attacks2_to_kunde_About2"
+            app:destination="@id/kunde_About2" />
+        <action
+            android:id="@+id/action_kunde_Attacks2_to_kunde_Tips2"
+            app:destination="@id/kunde_Tips2" />
+    </fragment>
+    <fragment
+        android:id="@+id/kunde_About2"
+        android:name="com.example.mkulima_plus.kunde.kunde_About"
+        android:label="fragment_kunde__about"
+        tools:layout="@layout/fragment_kunde__about" >
+        <action
+            android:id="@+id/action_kunde_About2_to_kunde_Attacks2"
+            app:destination="@id/kunde_Attacks2" />
+    </fragment>
+    <fragment
+        android:id="@+id/kunde_Tips2"
+        android:name="com.example.mkulima_plus.kunde.Kunde_Tips"
+        android:label="fragment_kunde__tips"
+        tools:layout="@layout/fragment_kunde__tips" >
+        <action
+            android:id="@+id/action_kunde_Tips2_to_kunde_Attacks2"
+            app:destination="@id/kunde_Attacks2" />
+    </fragment>
+</navigation>

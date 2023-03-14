@@ -13,7 +13,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class Isaka_About : Fragment(R.layout.fragment_about) {
     private lateinit var dbRef: FirebaseFirestore
-    var AttacksData = ArrayList<Isaka_DataClass>()
+    var AboutData = ArrayList<Isaka_DataClass>()
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: Isaka_Adapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -21,7 +21,7 @@ class Isaka_About : Fragment(R.layout.fragment_about) {
         recyclerView = view.findViewById(R.id.RecyclerviewAbout)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.hasFixedSize()
-        adapter = Isaka_Adapter(requireContext(), AttacksData)
+        adapter = Isaka_Adapter(requireContext(), AboutData)
         getAboutData()
     }
 
@@ -34,7 +34,7 @@ class Isaka_About : Fragment(R.layout.fragment_about) {
             }
             for (dc: DocumentChange in value?.documentChanges!!) {
                 if (dc.type == DocumentChange.Type.ADDED) {
-                    AttacksData.add(dc.document.toObject(Isaka_DataClass::class.java))
+                    AboutData.add(dc.document.toObject(Isaka_DataClass::class.java))
                 }
             }
             adapter.notifyDataSetChanged()

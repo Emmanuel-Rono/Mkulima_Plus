@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/managu_graph"
-    app:startDestination="@id/managu_Tips">
+    app:startDestination="@id/managu_about">
     <fragment
         android:id="@+id/managu_Tips"
         android:name="com.example.mkulima_plus.Managu.managu_Tips"
