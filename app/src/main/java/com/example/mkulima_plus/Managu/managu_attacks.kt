@@ -3,21 +3,17 @@ package com.example.mkulima_plus.Managu
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mkulima_plus.Isaka.Isaka_Adapter
-import com.example.mkulima_plus.Isaka.Isaka_DataClass
 import com.example.mkulima_plus.R
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 
 class managu_attacks : Fragment(R.layout.fragment_managu_attacks) {
     private lateinit var dbRef: FirebaseFirestore
-    var AttacksData = ArrayList<Managu_DataClass>()
+    var AttacksData = ArrayList<Crops_Dataclass>()
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: Managu_Adapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,7 +33,7 @@ class managu_attacks : Fragment(R.layout.fragment_managu_attacks) {
             }
             for (dc: DocumentChange in value?.documentChanges!!) {
                 if (dc.type == DocumentChange.Type.ADDED) {
-                    AttacksData.add(dc.document.toObject(Managu_DataClass::class.java))
+                    AttacksData.add(dc.document.toObject(Crops_Dataclass::class.java))
                 }
             }
             adapter.notifyDataSetChanged()

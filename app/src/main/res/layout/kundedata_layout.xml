@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:text="Managu"
+            android:text="Kunde"
             android:textColor="@color/teaal"
             android:textStyle="bold"
             android:textSize="15sp"
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="4dp"/>
         <ImageView
-            android:id="@+id/managu_image"
+            android:id="@+id/kunde_image"
             android:layout_width="250dp"
             android:layout_height="150dp"
             android:layout_marginStart="10dp"
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="4dp"/>
         <TextView
-            android:id="@+id/managu_Bio"
+            android:id="@+id/kunde_Bio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -52,5 +52,4 @@
             android:textColor="@color/black"
             android:textSize="15sp" />
     </androidx.appcompat.widget.LinearLayoutCompat>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
