@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/managu_about"
+        android:id="@+id/kunde_About"
         app:showAsAction="always"
         android:title="@string/about"
 />
     <item
-        android:id="@+id/managu_attacks"
+        android:id="@+id/kunde_Attacks"
         app:showAsAction="ifRoom"
         android:title="@string/attacks"
         />
     <item
-        android:id="@+id/managu_Tips"
+        android:id="@+id/kunde_Tips"
         app:showAsAction="always"
         android:title="@string/tips"
         />

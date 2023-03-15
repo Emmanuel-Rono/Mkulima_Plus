@@ -20,7 +20,7 @@ class kunde_About : Fragment(R.layout.fragment_kunde__about)
     var kundaData = ArrayList<Crops_Dataclass>()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerview = view.findViewById(R.id.kunde_attack_recyclerview)
+        recyclerview = view.findViewById(R.id.kunde_about_recyclerview)
         recyclerview.layoutManager = LinearLayoutManager(requireContext())
         recyclerview.hasFixedSize()
         adapter = kundeAdapter(requireContext(), kundaData)
