@@ -20,6 +20,7 @@ class kundeAdapter(val context:Context,val cropdata:List<Crops_Dataclass>):Recyc
         val title_Text:TextView=itemView.findViewById(R.id.name_of_Crop)
         val image:ImageView=itemView.findViewById(R.id.kunde_image)
         val bio:TextView=itemView.findViewById(R.id.kunde_Bio)
+        val Treat:TextView=itemView.findViewById(R.id.kunde_attack_treatment)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewholder {
         val view=LayoutInflater.from(parent.context).inflate(R.layout.kundedata_layout,parent,false)
@@ -30,6 +31,7 @@ class kundeAdapter(val context:Context,val cropdata:List<Crops_Dataclass>):Recyc
         val Position=cropdata[position]
         holder.title_Text.text=Position.name
         holder.bio.text=Position.Bio
+        holder.Treat.text=Position.treatment
         Glide.with(context)
             .load(Position.images)
             .into(holder.image)
