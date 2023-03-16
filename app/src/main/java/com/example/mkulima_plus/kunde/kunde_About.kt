@@ -26,7 +26,6 @@ class kunde_About : Fragment(R.layout.fragment_kunde__about)
         adapter = kundeAdapter(requireContext(), kundaData)
         getAboutData()
     }
-
     @SuppressLint("NotifyDataSetChanged")
     fun getAboutData() {
         //get instance of the database
