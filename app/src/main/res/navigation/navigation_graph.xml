@@ -25,6 +25,12 @@
         <action
             android:id="@+id/action_attacks_to_about"
             app:destination="@id/fragment_about" />
+        <action
+            android:id="@+id/action_fragment_attacks_to_fragment_about"
+            app:destination="@id/fragment_about" />
+        <action
+            android:id="@+id/action_fragment_attacks_to_tips"
+            app:destination="@id/tips" />
     </fragment>
     <fragment
         android:id="@+id/tips"

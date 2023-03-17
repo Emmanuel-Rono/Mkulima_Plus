@@ -2,8 +2,10 @@ package com.example.mkulima_plus.Isaka
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mkulima_plus.R
@@ -22,6 +24,16 @@ class Isaka_Attacks() : Fragment(R.layout.fragment_attacks)
         recyclerView.hasFixedSize()
         adapter = Isaka_Adapter(requireContext(),AttacksData)
         getAboutData()
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onOptionsItemSelected(item: MenuItem): Boolean
+    {
+        when(item.itemId){
+            R.id.tips->{findNavController().navigate(R.id.action_fragment_attacks_to_tips)}
+        }
+
+        return false
     }
     @SuppressLint("NotifyDataSetChanged")
     private fun getAboutData() {
