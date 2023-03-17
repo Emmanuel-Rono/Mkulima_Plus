@@ -7,6 +7,8 @@
     tools:context=".kunde.kunde_About">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/kunde_about_recyclerview"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_width="match_parent"
         android:background="@color/white"
         android:layout_height="match_parent"

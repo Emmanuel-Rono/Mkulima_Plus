@@ -28,7 +28,7 @@ class Isaka_Adapter(val context: Context, val attacks:List<Isaka_DataClass>,
     override fun onBindViewHolder(holder: attacks_Viewholder, position: Int) {
         val Position=attacks[position]
         holder.name.text=Position.name
-        holder.attack_texts.text=Position.AttackBio
+        holder.attack_texts.text= Position.AttackBio
         Glide.with(context)
             .load(Position.images)
             .into(holder.image)
