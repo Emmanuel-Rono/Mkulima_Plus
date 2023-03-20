@@ -3,8 +3,10 @@ package com.example.mkulima_plus.Isaka
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.core.view.MenuProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -23,6 +25,9 @@ class IsakaActivity : AppCompatActivity() {
         navcontroller = navhost.findNavController()
         toolbar.setupWithNavController(navcontroller)
     }
+
+
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
         menuInflater.inflate(R.menu.tool_bar_menu,menu)

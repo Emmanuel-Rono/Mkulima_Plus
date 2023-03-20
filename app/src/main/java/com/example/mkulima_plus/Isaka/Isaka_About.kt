@@ -3,7 +3,11 @@ package com.example.mkulima_plus.Isaka
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +27,7 @@ class Isaka_About : Fragment(R.layout.fragment_about) {
         recyclerView.hasFixedSize()
         adapter = Isaka_Adapter(requireContext(), AboutData)
         getAboutData()
+
     }
 
     @SuppressLint("NotifyDataSetChanged")

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import androidx.core.view.MenuHost
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,6 +24,9 @@ class Isaka_Attacks() : Fragment(R.layout.fragment_attacks)
         recyclerView.layoutManager=LinearLayoutManager(requireContext())
         recyclerView.hasFixedSize()
         adapter = Isaka_Adapter(requireContext(),AttacksData)
+
+        val menuHost: MenuHost = requireActivity()
+
         getAboutData()
     }
 
