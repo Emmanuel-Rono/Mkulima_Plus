@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/fragment_about">
+    app:startDestination="@id/isakaDisplay">
 
     <fragment
         android:id="@+id/fragment_about"
@@ -39,6 +39,21 @@
         tools:layout="@layout/fragment_tips">
         <action
             android:id="@+id/action_tips_to_about"
+            app:destination="@id/fragment_about" />
+    </fragment>
+    <fragment
+        android:id="@+id/isakaDisplay"
+        android:name="com.example.mkulima_plus.Isaka.isakaDisplay"
+        android:label="fragment_isaka_display"
+        tools:layout="@layout/fragment_isaka_display" >
+        <action
+            android:id="@+id/action_isakaDisplay_to_fragment_attacks"
+            app:destination="@id/fragment_attacks" />
+        <action
+            android:id="@+id/action_isakaDisplay_to_tips"
+            app:destination="@id/tips" />
+        <action
+            android:id="@+id/action_isakaDisplay_to_fragment_about"
             app:destination="@id/fragment_about" />
     </fragment>
 </navigation>
