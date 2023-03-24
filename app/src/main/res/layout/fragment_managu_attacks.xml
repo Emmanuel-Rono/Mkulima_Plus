@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Managu.managu_attacks">
+    tools:context=".Managu.managuattacks">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Attacks_managu_Recyclerview"
         android:layout_width="match_parent"

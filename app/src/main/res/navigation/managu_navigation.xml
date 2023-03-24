@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/managu_attacks"
-        android:name="com.example.mkulima_plus.Managu.managu_attacks"
+        android:name="com.example.mkulima_plus.Managu.managuattacks"
         android:label="fragment_managu_attacks"
         tools:layout="@layout/fragment_managu_attacks" >
         <action

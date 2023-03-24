@@ -3,6 +3,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -27,20 +28,32 @@ class Managu_Activity : AppCompatActivity() {
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean
     {
+        val managu_attacks:View=findViewById(R.id.managu_attacks)
+        val managu_tiips:View=findViewById(R.id.managu_Tips)
+        val managu_abouut:View=findViewById(R.id.managu_about)
         when(item.itemId) {
             R.id.managu_attacks-> {
                 navcontroller.navigate(R.id.action_managu_about_to_managu_attacks)
+                managu_tiips.setOnClickListener(null)
+                //managu_attacks.setOnClickListener(null)
+                managu_abouut.setOnClickListener(null)
             }
         }
         when (item.itemId) {
             R.id.managu_Tips-> {
                 navcontroller.navigate(R.id.action_managu_about_to_managu_Tips)
+               // managu_tiips.setOnClickListener(null)
+                managu_attacks.setOnClickListener(null)
+                managu_abouut.setOnClickListener(null)
             }
         }
         when(item.itemId) {
             R.id.fragment_about -> {
                 val intent = Intent(this, managu_about::class.java)
                 startActivity(intent)
+                managu_tiips.setOnClickListener(null)
+                managu_attacks.setOnClickListener(null)
+                //managu_abouut.setOnClickListener(null)
             }
         }
         return false

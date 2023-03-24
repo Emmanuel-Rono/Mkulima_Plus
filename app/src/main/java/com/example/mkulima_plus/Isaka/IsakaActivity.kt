@@ -39,7 +39,7 @@ class IsakaActivity : AppCompatActivity() {
         val fragmenttips=findViewById<View>(R.id.tips)
         when(item.itemId) {
             R.id.fragment_attacks -> {
-                navcontroller.navigate(R.id.action_about_to_attacks)
+                navcontroller.navigate(R.id.action_isakaDisplay_to_fragment_attacks)
                fragmentattacks .setOnClickListener(null)
                 fragmenttips.setOnClickListener(null)
                 fragmentabout.setOnClickListener(null)

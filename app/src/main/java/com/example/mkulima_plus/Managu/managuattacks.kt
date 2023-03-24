@@ -11,7 +11,7 @@ import com.example.mkulima_plus.R
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 
-class managu_attacks : Fragment(R.layout.fragment_managu_attacks) {
+class managuattacks : Fragment(R.layout.fragment_managu_attacks) {
     private lateinit var dbRef: FirebaseFirestore
     var AttacksData = ArrayList<Crops_Dataclass>()
     lateinit var recyclerView: RecyclerView
