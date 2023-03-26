@@ -35,14 +35,14 @@ class Managu_Activity : AppCompatActivity() {
             R.id.managu_attacks-> {
                 navcontroller.navigate(R.id.action_managu_about_to_managu_attacks)
                 managu_tiips.setOnClickListener(null)
-                //managu_attacks.setOnClickListener(null)
+                managu_attacks.setOnClickListener(null)
                 managu_abouut.setOnClickListener(null)
             }
         }
         when (item.itemId) {
             R.id.managu_Tips-> {
                 navcontroller.navigate(R.id.action_managu_about_to_managu_Tips)
-               // managu_tiips.setOnClickListener(null)
+                managu_tiips.setOnClickListener(null)
                 managu_attacks.setOnClickListener(null)
                 managu_abouut.setOnClickListener(null)
             }
@@ -53,7 +53,7 @@ class Managu_Activity : AppCompatActivity() {
                 startActivity(intent)
                 managu_tiips.setOnClickListener(null)
                 managu_attacks.setOnClickListener(null)
-                //managu_abouut.setOnClickListener(null)
+                managu_abouut.setOnClickListener(null)
             }
         }
         return false

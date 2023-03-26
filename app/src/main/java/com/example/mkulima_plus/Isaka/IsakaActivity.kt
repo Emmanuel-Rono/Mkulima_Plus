@@ -51,7 +51,6 @@ class IsakaActivity : AppCompatActivity() {
                 fragmentattacks.setOnClickListener(null)
                 fragmentabout.setOnClickListener(null)
                 navcontroller.navigate(R.id.action_isakaDisplay_to_tips)
-
             }
         }
         when(item.itemId) {
