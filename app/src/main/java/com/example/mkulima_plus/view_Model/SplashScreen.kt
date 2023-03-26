@@ -8,6 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowInsets
 import com.example.mkulima_plus.R
+import com.example.mkulima_plus.SignIn_activity
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +19,7 @@ class SplashScreen : AppCompatActivity() {
             window.insetsController?.hide(WindowInsets.Type.statusBars())
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, SignIn_activity::class.java)
             startActivity(intent)
             finish()
         }, 3000)

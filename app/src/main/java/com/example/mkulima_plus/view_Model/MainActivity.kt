@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
 import androidx.navigation.NavController
@@ -15,9 +16,11 @@ import com.example.mkulima_plus.R
 import com.example.mkulima_plus.Isaka.Isaka_Adapter
 import com.example.mkulima_plus.Isaka.IsakaActivity
 import com.example.mkulima_plus.Managu.Managu_Activity
+import com.example.mkulima_plus.SignIn_activity
 import com.example.mkulima_plus.View.cropsAdapater
 import com.example.mkulima_plus.View.cropsModel
 import com.example.mkulima_plus.kunde.kundeActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity(),cropsAdapater.OnlickListener{
     lateinit var Recyclerview: RecyclerView
@@ -26,11 +29,15 @@ class MainActivity : AppCompatActivity(),cropsAdapater.OnlickListener{
     lateinit var textname: Array<String>
     lateinit var dataArray: ArrayList<cropsModel>
     lateinit var dataArray2: ArrayList<Isaka_Adapter>
+    lateinit var Auth:FirebaseAuth
     @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //Setting up optionMenu Provider
+        // initialise Auth
+        Auth= FirebaseAuth.getInstance()
+
         addMenuProvider(object : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
                 menuInflater.inflate(R.menu.tool_bar_menu, menu)
@@ -81,4 +88,16 @@ class MainActivity : AppCompatActivity(),cropsAdapater.OnlickListener{
            }
        }
 
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        // Check if user is logged in
+        if (Auth.currentUser != null) {
+            // Log out user
+            Auth.signOut()
+            Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show()
+            val intent=Intent(this,SignIn_activity::class.java)
+            startActivity(intent)
+        }
+        finish()
+    }
     }
